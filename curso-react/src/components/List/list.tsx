@@ -4,16 +4,16 @@ function List() {
     const tasks = 
     [
         {
-            tarefa: 'React',
-            tempo: '02:00:00'
+            task: 'React',
+            time: '02:00:00'
         },
         {
-            tarefa: 'JavaScript',
-            tempo: '01:00:00'
+            task: 'JavaScript',
+            time: '01:00:00'
         },
         {
-            tarefa: 'TypeScript',
-            tempo: '03:30:00'
+            task: 'TypeScript',
+            time: '03:30:00'
         }
     ];
     return(
@@ -22,8 +22,8 @@ function List() {
             <ul>
                 {tasks.map((item, index) => (
                     <li key={index}>
-                        <h3>{item.tarefa}</h3>
-                        <span>{item.tempo}</span>
+                        <h3>{item.task}</h3>
+                        <span>{item.time}</span>
                     </li>
                 ))}
             </ul>
