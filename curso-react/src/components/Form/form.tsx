@@ -29,7 +29,7 @@ class Form extends React.Component <{
         
             this.setState({
             task: "",
-            time: ""
+            time: "00:00:00"
         })
     }
 
