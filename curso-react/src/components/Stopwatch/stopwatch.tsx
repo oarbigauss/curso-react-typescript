@@ -6,10 +6,11 @@ import { ITask } from "../../types/task";
 import { useEffect, useState } from "react";
 
 interface Props{
-    selected: ITask | undefined
+    selected: ITask | undefined,
+    endTask: () => void,
 }
 
-export default function Stopwatch({selected}: Props){
+export default function Stopwatch({selected, endTask}: Props){
 
     useEffect(()=>{
         if (selected?.time) {
@@ -23,6 +24,7 @@ export default function Stopwatch({selected}: Props){
                 setTime(count - 1);
                 return regressive(count - 1);
             }
+            endTask();
         }, 1000)
     }
 
