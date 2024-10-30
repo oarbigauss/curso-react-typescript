@@ -16,6 +16,16 @@ export default function Stopwatch({selected}: Props){
             setTime(timeToSeconds(String(selected?.time)))
         }
     },[selected]);
+
+    function regressive(count: number = 0){
+        setTimeout(()=>{
+            if (count > 0) {
+                setTime(count - 1);
+                return regressive(count - 1);
+            }
+        }, 1000)
+    }
+
     const [time, setTime] = useState<number>();
     return(
         <div className={style.cronometro}>
@@ -23,7 +33,7 @@ export default function Stopwatch({selected}: Props){
             <div className={style.relogioWrapper}>
                 <Watch time={time}/>
             </div>
-            <Button>
+            <Button onClick={() => regressive(time)}>
                 Começar
             </Button>
         </div>
